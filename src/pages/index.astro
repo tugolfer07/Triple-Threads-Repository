@@ -1,37 +1,57 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout>
-  <section class="hero">
-    <h1>Welcome to Triple Threads</h1>
-    <p>Custom embroidery for private schools, corporate branding, and more.</p>
-    <img src="/logo.png" alt="Triple Threads Logo" />
+  <!-- Hero Section -->
+  <section class="hero bg-blue-900 text-white text-center py-20">
+    <div class="container mx-auto px-6">
+      <h1 class="text-5xl font-bold mb-4">Triple Threads Custom Embroidery</h1>
+      <p class="text-lg">Precision. Style. Quality. Your Vision, Our Stitch.</p>
+      <a href="#contact" class="mt-6 inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200">Get a Quote</a>
+    </div>
   </section>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>School Uniform Embroidery</li>
-      <li>Corporate Branding</li>
-      <li>Custom Apparel</li>
-    </ul>
+  <!-- Services Section -->
+  <section class="services py-20 bg-gray-100 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-blue-900">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="service-item p-6 bg-white shadow-lg rounded-lg">
+          <h3 class="text-xl font-semibold">School Uniform Embroidery</h3>
+          <p class="text-gray-600">Logos, mascots, and names on uniforms.</p>
+        </div>
+        <div class="service-item p-6 bg-white shadow-lg rounded-lg">
+          <h3 class="text-xl font-semibold">Corporate Branding</h3>
+          <p class="text-gray-600">Custom embroidery for professional apparel.</p>
+        </div>
+        <div class="service-item p-6 bg-white shadow-lg rounded-lg">
+          <h3 class="text-xl font-semibold">Custom Apparel</h3>
+          <p class="text-gray-600">Hats, jackets, bags, and more.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="gallery">
-    <h2>Our Work</h2>
-    <p>See our latest projects, before & afters, and time-lapse videos.</p>
-    <img src="/sample-embroidery.jpg" alt="Sample Embroidery Work" />
+  <!-- Gallery Section -->
+  <section class="gallery py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-blue-900">Our Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="/sample-embroidery1.jpg" alt="Embroidery Example 1" class="rounded-lg shadow-md">
+        <img src="/sample-embroidery2.jpg" alt="Embroidery Example 2" class="rounded-lg shadow-md">
+        <img src="/sample-embroidery3.jpg" alt="Embroidery Example 3" class="rounded-lg shadow-md">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact py-20 bg-blue-900 text-white text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
+      <p class="text-lg">Have a project in mind? Let’s bring your ideas to life.</p>
+      <a href="mailto:info@triplethreadsok.com" class="mt-4 inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200">Email Us</a>
+    </div>
   </section>
 </Layout>
 
-<style>
-  .hero {
-    text-align: center;
-    padding: 50px;
-    background-color: #EAB2A0; /* Soft pink */
-  }
-  .services, .gallery {
-    text-align: center;
-    padding: 20px;
-  }
-</style>
