@@ -1,21 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+import Layout from "../layouts/Layout.astro";
 ---
+<Layout>
+  <section class="hero">
+    <h1>Welcome to Triple Threads</h1>
+    <p>Custom embroidery for private schools, corporate branding, and more.</p>
+    <img src="/logo.png" alt="Triple Threads Logo" />
+  </section>
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-4" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="text-lg mb-10" />
-    <p class="mb-8">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg btn-primary sm:btn-wide">Read the Docs</a>
-    </p>
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>School Uniform Embroidery</li>
+      <li>Corporate Branding</li>
+      <li>Custom Apparel</li>
+    </ul>
+  </section>
+
+  <section class="gallery">
+    <h2>Our Work</h2>
+    <p>See our latest projects, before & afters, and time-lapse videos.</p>
+    <img src="/sample-embroidery.jpg" alt="Sample Embroidery Work" />
+  </section>
 </Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #EAB2A0; /* Soft pink */
+  }
+  .services, .gallery {
+    text-align: center;
+    padding: 20px;
+  }
+</style>
