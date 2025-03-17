@@ -1,45 +1,59 @@
-import React from 'react';
+---
+import Layout from '../layouts/Layout.astro';
 
-const LogoPreview = () => {
-  return (
-    <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center justify-center">
-      <div className="text-center mb-8">
-        <h2 className="text-lg font-medium text-gray-500 mb-2">Logo Preview:</h2>
-        
-        <div className="p-6 border rounded-lg">
-          <h1 className="mb-1">
-            <span 
-              style={{
-                fontFamily: "'Tangerine', cursive",
-                fontSize: "5rem",
-                lineHeight: "1.1"
-              }}
-              className="block font-bold"
-            >
-              Triple Threds
-            </span>
-            <span 
-              style={{
-                letterSpacing: "0.1em"
-              }}
-              className="block text-xl font-medium text-gray-700"
-            
-              CUSTOM EMBROIDERY
-            </span>
-          </h1>
-        </div>
+// Any variables or data fetching happens here, but no return statements!
+const pageTitle = "Triple Threds | Custom Embroidery";
+const services = [
+  "Private School Uniforms",
+  "Custom Golf Headcovers",
+  "Corporate Apparel",
+  "Sports Team Gear"
+];
+---
+
+<Layout title={pageTitle}>
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <section class="text-center py-12">
+      <div class="mb-8">
+        <h1 class="mb-4">
+          <span class="text-5xl font-bold block mb-2">Triple Threds</span>
+          <span class="text-2xl font-medium text-gray-700">CUSTOM EMBROIDERY</span>
+        </h1>
       </div>
       
-      <p className="text-gray-600 text-sm mt-4">
-        Note: This preview uses Tangerine as a web-safe alternative to Edwardian Script.
-        The actual font will be Edwardian Script when implemented on your website.
+      <p class="text-xl max-w-3xl mx-auto mb-8">
+        Professional embroidery services for businesses, schools, sports teams, and personal projects.
+        Quality craftsmanship and attention to detail for all your custom embroidery needs.
       </p>
-    </div>
-  );
-};
-
-export default LogoPreview;
+      
+      <div class="flex justify-center">
+        <a href="/contact" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+          Get a Quote
+        </a>
+      </div>
+    </section>
     
+    <!-- Services Preview -->
+    <section class="py-12">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map((service) => (
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-2">{service}</h3>
+            <p>Quality custom embroidery for your specific needs.</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/image-cdn" class="inline-block px-6 py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
+          View All Services
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+  
     <!-- Private School Uniforms -->
     <div class="mb-12">
         <h3 class="text-2xl font-bold mb-4 text-blue-600">Private School Uniforms</h3>
