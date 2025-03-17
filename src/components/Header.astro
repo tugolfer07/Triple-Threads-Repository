@@ -1,0 +1,60 @@
+---
+// Pass the active page as a prop
+const { activePage = 'home' } = Astro.props;
+---
+
+<header>
+  <!-- Top bar with logo and login/cart -->
+  <div class="aegean-bg text-white py-3">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="/" class="script-font text-2xl">Triple Threads</a>
+      
+      <!-- User controls -->
+      <div class="flex items-center gap-4">
+        <a href="/login" class="hover:text-rusty-coral transition-colors">Login</a>
+        <a href="/register" class="hover:text-rusty-coral transition-colors">Register</a>
+        <a href="/cart" class="relative" aria-label="Shopping Cart">
+          <span class="text-xl">🛒</span>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-rusty-coral text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main navigation -->
+  <nav class="bg-white shadow-sm py-4">
+    <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
+      <!-- Main menu -->
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <a href="/" class={`font-medium transition-colors ${activePage === 'home' ? 'rusty-coral-text' : 'aegean-text hover:rusty-coral-text'}`}>Home</a>
+        <a href="/services" class={`font-medium transition-colors ${activePage === 'services' ? 'rusty-coral-text' : 'aegean-text hover:rusty-coral-text'}`}>Services</a>
+        <a href="/portfolio" class={`font-medium transition-colors ${activePage === 'portfolio' ? 'rusty-coral-text' : 'aegean-text hover:rusty-coral-text'}`}>Portfolio</a>
+        <a href="/about" class={`font-medium transition-colors ${activePage === 'about' ? 'rusty-coral-text' : 'aegean-text hover:rusty-coral-text'}`}>About Us</a>
+        <a href="/contact" class={`font-medium transition-colors ${activePage === 'contact' ? 'rusty-coral-text' : 'aegean-text hover:rusty-coral-text'}`}>Contact</a>
+      </div>
+      
+      <!-- Search form -->
+      <div class="mt-3 sm:mt-0">
+        <form class="flex border border-sea-mist rounded overflow-hidden">
+          <input type="search" placeholder="Search..." class="py-2 px-3 w-full sm:w-auto focus:outline-none" aria-label="Search">
+          <button type="submit" class="rusty-coral-bg text-white py-2 px-4">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Update cart count if items in cart
+  document.addEventListener('DOMContentLoaded', () => {
+    const cartCount = document.getElementById('cart-count');
+    // Example cart count logic - replace with your actual cart state logic
+    const itemsInCart = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')).length : 0;
+    
+    if (itemsInCart > 0) {
+      cartCount.textContent = itemsInCart;
+      cartCount.classList.remove('hidden');
+    }
+  });
+</script>
