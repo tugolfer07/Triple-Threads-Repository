@@ -16,16 +16,21 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--pale-taupe);
   color: var(--aegean);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   color: var(--aegean);
+  line-height: 1.2;
 }
 
 .script-font {
   font-family: 'Pinyon Script', cursive;
+  font-weight: normal;
 }
 
 .page-title {
@@ -154,6 +159,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .service-card:hover {
