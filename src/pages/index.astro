@@ -1,217 +1,446 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// The simplest possible index page
 ---
 
-<Layout title="Triple Threads | Custom Embroidery">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triple Threads Embroidery</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Simple CSS with no dependencies */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #465A72; /* Aegean */
+      background-color: #EEEAE4; /* Pale Taupe */
+    }
+    
+    a {
+      color: #465A72; /* Aegean */
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: #CE8678; /* Rusty Coral */
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background-color: #465A72; /* Aegean */
+      color: white;
+      padding: 10px 0;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 28px;
+      color: white;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .nav-links a {
+      color: white;
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .hero h1 {
+      margin-bottom: 10px;
+    }
+    
+    .hero .title {
+      font-family: 'Pinyon Script', cursive;
+      color: #CE8678; /* Rusty Coral */
+      font-size: 48px;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+    
+    .hero .subtitle {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #465A72; /* Aegean */
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 500;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background-color: #CE8678; /* Rusty Coral */
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #b97267;
+      color: white;
+    }
+    
+    .btn-secondary {
+      border: 2px solid #CE8678; /* Rusty Coral */
+      color: #CE8678; /* Rusty Coral */
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(206, 134, 120, 0.1);
+    }
+    
+    /* Services */
+    .services {
+      padding: 40px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #465A72; /* Aegean */
+      font-size: 32px;
+    }
+    
+    .service-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      list-style: none;
+    }
+    
+    @media (min-width: 768px) {
+      .service-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .service-item {
+      border: 1px solid #C0CACB; /* Sea Mist */
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .service-item h3 {
+      background-color: #465A72; /* Aegean */
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    .service-item p {
+      padding: 15px;
+      color: #4B746C; /* Pine */
+    }
+    
+    /* Testimonial */
+    .testimonial {
+      background-color: #4B746C; /* Pine */
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .testimonial-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 8px;
+      background-color: white;
+      color: #465A72; /* Aegean */
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .testimonial-author {
+      color: #CE8678; /* Rusty Coral */
+      font-weight: 500;
+    }
+    
+    /* Call to Action */
+    .cta {
+      background-color: #CE8678; /* Rusty Coral */
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .cta h2 {
+      margin-bottom: 15px;
+    }
+    
+    .cta p {
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #465A72; /* Aegean */
+      color: white;
+      padding: 30px 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .footer-section h3 {
+      color: #CE8678; /* Rusty Coral */
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-section a {
+      color: white;
+    }
+    
+    .footer-section a:hover {
+      color: #CE8678; /* Rusty Coral */
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+    }
+    
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .social-icon:hover {
+      background-color: #CE8678; /* Rusty Coral */
+    }
+    
+    /* Subscribe Form */
+    .subscribe-form {
+      display: flex;
+      margin-top: 15px;
+    }
+    
+    .subscribe-input {
+      flex-grow: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .subscribe-button {
+      background-color: #CE8678; /* Rusty Coral */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
   <!-- Header -->
   <header>
-    <!-- Top bar with logo and login/cart -->
-    <div class="aegean-bg text-white py-3">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <!-- Logo -->
-        <a href="/" class="script-font text-2xl">Triple Threads</a>
-        
-        <!-- User controls -->
-        <div class="flex items-center gap-4">
-          <a href="/login" class="hover:text-rusty-coral transition-colors">Login</a>
-          <a href="/register" class="hover:text-rusty-coral transition-colors">Register</a>
-          <a href="/cart" class="relative" aria-label="Shopping Cart">
-            <span class="text-xl">🛒</span>
-          </a>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Triple Threads</a>
+        <div class="nav-links">
+          <a href="/client-portal">Client Portal</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </div>
-    
-    <!-- Main navigation -->
-    <nav class="bg-white shadow-sm py-4">
-      <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
-        <!-- Main menu -->
-        <div class="flex flex-wrap gap-x-6 gap-y-2">
-          <a href="/" class="rusty-coral-text font-medium">Home</a>
-          <a href="/services" class="aegean-text hover:rusty-coral-text font-medium transition-colors">Services</a>
-          <a href="/portfolio" class="aegean-text hover:rusty-coral-text font-medium transition-colors">Portfolio</a>
-          <a href="/about" class="aegean-text hover:rusty-coral-text font-medium transition-colors">About Us</a>
-          <a href="/contact" class="aegean-text hover:rusty-coral-text font-medium transition-colors">Contact</a>
-        </div>
-        
-        <!-- Search form -->
-        <div class="mt-3 sm:mt-0">
-          <form class="flex border border-sea-mist rounded overflow-hidden">
-            <input type="search" placeholder="Search..." class="py-2 px-3 w-full sm:w-auto focus:outline-none" aria-label="Search">
-            <button type="submit" class="rusty-coral-bg text-white py-2 px-4">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
   </header>
-
+  
   <!-- Hero Section -->
-  <section class="py-16 pale-taupe-bg">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="mb-6">
-        <span class="script-font text-5xl block rusty-coral-text">Triple Threads</span>
-        <span class="uppercase text-xl tracking-widest aegean-text">CUSTOM EMBROIDERY</span>
+  <section class="hero">
+    <div class="container">
+      <h1>
+        <span class="title">Triple Threads</span>
+        <div class="subtitle">Custom Embroidery</div>
       </h1>
-      
-      <p class="text-xl max-w-2xl mx-auto mb-8 pine-text">
-        Professional embroidery for schools, businesses, and personalized projects
-      </p>
-      
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="/contact" class="btn-primary">Get a Quote</a>
-        <a href="/portfolio" class="btn-secondary">View Our Work</a>
+      <p>Professional embroidery for schools, businesses, and personalized projects</p>
+      <div>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
       </div>
     </div>
   </section>
   
-  <!-- Services Section with Simple Cards -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title text-center aegean-text mb-10">Our Services</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- School Uniforms -->
-        <a href="/services/school-uniforms" class="service-card">
-          <div class="aegean-bg p-4 flex items-center justify-center">
-            <h3 class="text-white font-medium text-xl">School Uniforms</h3>
-          </div>
-          <div class="p-5">
-            <p class="pine-text">Custom embroidery for private school uniforms</p>
-          </div>
-        </a>
-        
-        <!-- Golf Products -->
-        <a href="/services/golf-products" class="service-card">
-          <div class="aegean-bg p-4 flex items-center justify-center">
-            <h3 class="text-white font-medium text-xl">Golf Products</h3>
-          </div>
-          <div class="p-5">
-            <p class="pine-text">Custom headcovers and golf accessories</p>
-          </div>
-        </a>
-        
-        <!-- Corporate Apparel -->
-        <a href="/services/corporate-apparel" class="service-card">
-          <div class="aegean-bg p-4 flex items-center justify-center">
-            <h3 class="text-white font-medium text-xl">Corporate Apparel</h3>
-          </div>
-          <div class="p-5">
-            <p class="pine-text">Professional branded clothing for businesses</p>
-          </div>
-        </a>
-        
-        <!-- Personalized Gifts -->
-        <a href="/services/personalized-gifts" class="service-card">
-          <div class="aegean-bg p-4 flex items-center justify-center">
-            <h3 class="text-white font-medium text-xl">Personalized Gifts</h3>
-          </div>
-          <div class="p-5">
-            <p class="pine-text">Custom monogrammed items for special occasions</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Featured Projects - Simple List -->
-  <section class="py-16 sea-mist-bg">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title text-center aegean-text mb-10">Featured Projects</h2>
-      
-      <div class="max-w-2xl mx-auto">
-        <div class="bg-white rounded-lg p-6 shadow">
-          <ul class="space-y-3">
-            <li><a href="/portfolio" class="pine-text hover:rusty-coral-text transition-colors">Project 1</a></li>
-            <li><a href="/portfolio" class="pine-text hover:rusty-coral-text transition-colors">Project 2</a></li>
-            <li><a href="/portfolio" class="pine-text hover:rusty-coral-text transition-colors">Project 3</a></li>
-            <li><a href="/portfolio" class="pine-text hover:rusty-coral-text transition-colors">Project 4</a></li>
-            <li><a href="/portfolio" class="pine-text hover:rusty-coral-text transition-colors">Project 5</a></li>
-            <li><a href="/portfolio" class="pine-text hover:rusty-coral-text transition-colors">Project 6</a></li>
-          </ul>
-        </div>
-        
-        <div class="text-center mt-8">
-          <a href="/portfolio" class="btn-secondary">View All Projects</a>
-        </div>
-      </div>
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <ul class="service-list">
+        <li class="service-item">
+          <h3>School Uniforms</h3>
+          <p>Custom embroidery for private school uniforms</p>
+        </li>
+        <li class="service-item">
+          <h3>Golf Products</h3>
+          <p>Custom headcovers and golf accessories</p>
+        </li>
+        <li class="service-item">
+          <h3>Corporate Apparel</h3>
+          <p>Professional branded clothing for businesses</p>
+        </li>
+        <li class="service-item">
+          <h3>Personalized Gifts</h3>
+          <p>Custom monogrammed items for special occasions</p>
+        </li>
+      </ul>
     </div>
   </section>
   
   <!-- Testimonial Section -->
-  <section class="pine-bg py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title text-center text-white mb-10">What Our Clients Say</h2>
-      
-      <div class="max-w-3xl mx-auto bg-white rounded-lg p-8 shadow">
-        <p class="text-xl italic mb-6 aegean-text">
-          "Triple Threads transformed our team uniforms with incredible attention to detail. Their embroidery quality is outstanding and their customer service is even better!"
-        </p>
-        <p class="font-medium rusty-coral-text text-right">— Sarah Johnson, Oak Hill Academy</p>
+  <section class="testimonial">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
+      <div class="testimonial-content">
+        <p class="testimonial-text">"Triple Threads transformed our team uniforms with incredible attention to detail. Their embroidery quality is outstanding and their customer service is even better!"</p>
+        <p class="testimonial-author">— Sarah Johnson, Oak Hill Academy</p>
       </div>
     </div>
   </section>
   
-  <!-- CTA Section -->
-  <section class="rusty-coral-bg py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="section-title text-white mb-6">Ready to Start Your Custom Project?</h2>
-      <p class="text-white text-xl mb-8 max-w-2xl mx-auto">
-        Contact us today for a free quote and consultation.
-      </p>
-      <a href="/contact" class="bg-white rusty-coral-text font-medium py-3 px-8 rounded-lg inline-block hover:bg-pale-taupe transition-colors">
-        Get Started
-      </a>
+  <!-- Call to Action Section -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <h2>Ready to Start Your Custom Project?</h2>
+      <p>Contact us today for a free quote and consultation.</p>
+      <a href="mailto:info@triplethreadsok.com" class="btn btn-primary" style="background-color: white; color: #CE8678;">Get Started</a>
     </div>
   </section>
   
   <!-- Footer -->
-  <footer class="aegean-bg text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Services -->
-        <div>
-          <h3 class="text-xl font-medium mb-4 rusty-coral-text">Services</h3>
-          <ul class="space-y-3">
-            <li><a href="/services/school-uniforms" class="hover:text-rusty-coral transition-colors">School Uniforms</a></li>
-            <li><a href="/services/golf-products" class="hover:text-rusty-coral transition-colors">Golf Products</a></li>
-            <li><a href="/services/corporate-apparel" class="hover:text-rusty-coral transition-colors">Corporate Apparel</a></li>
-            <li><a href="/services/custom-designs" class="hover:text-rusty-coral transition-colors">Custom Designs</a></li>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#services">School Uniforms</a></li>
+            <li><a href="#services">Golf Products</a></li>
+            <li><a href="#services">Corporate Apparel</a></li>
+            <li><a href="#services">Personalized Gifts</a></li>
           </ul>
         </div>
         
-        <!-- Customer Care -->
-        <div>
-          <h3 class="text-xl font-medium mb-4 rusty-coral-text">Customer Care</h3>
-          <ul class="space-y-3">
-            <li><a href="/about" class="hover:text-rusty-coral transition-colors">About Us</a></li>
-            <li><a href="/contact" class="hover:text-rusty-coral transition-colors">Contact Us</a></li>
-            <li><a href="/faq" class="hover:text-rusty-coral transition-colors">FAQ</a></li>
-            <li><a href="/policies" class="hover:text-rusty-coral transition-colors">Policies</a></li>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>Email: info@triplethreadsok.com</li>
+            <li>Phone: (555) 123-4567</li>
+            <li>Address: Oklahoma City, OK</li>
           </ul>
         </div>
         
-        <!-- Connect With Us -->
-        <div>
-          <h3 class="text-xl font-medium mb-4 rusty-coral-text">Connect With Us</h3>
-          <div class="flex space-x-4 mb-4">
-            <a href="#" aria-label="Facebook" class="bg-white bg-opacity-20 w-10 h-10 flex items-center justify-center rounded-full hover:bg-rusty-coral transition-colors">f</a>
-            <a href="#" aria-label="Instagram" class="bg-white bg-opacity-20 w-10 h-10 flex items-center justify-center rounded-full hover:bg-rusty-coral transition-colors">in</a>
-            <a href="#" aria-label="Pinterest" class="bg-white bg-opacity-20 w-10 h-10 flex items-center justify-center rounded-full hover:bg-rusty-coral transition-colors">p</a>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">in</a>
+            <a href="#" class="social-icon">p</a>
           </div>
-          
-          <form class="mt-4">
-            <label for="email" class="sr-only">Email</label>
-            <div class="flex">
-              <input type="email" id="email" placeholder="Your email" class="px-4 py-2 rounded-l w-full">
-              <button type="submit" class="rusty-coral-bg px-4 py-2 rounded-r text-white">Subscribe</button>
-            </div>
+          <p>Subscribe to our newsletter</p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Your email" class="subscribe-input">
+            <button type="submit" class="subscribe-button">Subscribe</button>
           </form>
         </div>
       </div>
       
-      <div class="border-t border-white border-opacity-20 mt-8 pt-6 text-center text-sm text-white text-opacity-70">
+      <div class="copyright">
         &copy; 2025 Triple Threads Embroidery. All rights reserved.
       </div>
     </div>
   </footer>
-</Layout>
+</body>
+</html>
