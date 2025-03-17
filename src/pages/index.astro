@@ -1,61 +1,68 @@
-import React from 'react';
+---
+import Layout from '../layouts/Layout.astro';
 
-const ElegantLogoPreview = () => {
-  return (
-    <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-10 rounded-lg flex flex-col items-center justify-center">
-        {/* Decorative stitch element */}
-        <div className="flex justify-center mb-3">
-          <div className="w-24 h-1 border-t-2 border-b-2 border-rose-300 border-dotted"></div>
-        </div>
-        
-        {/* Company name with fancy typography */}
-        <h1 className="mb-3 text-center">
-          <span 
-            style={{
-              fontFamily: "'Pinyon Script', cursive",
-              textShadow: "1px 1px 2px rgba(0,0,0,0.1)"
-            }}
-            className="block text-rose-800 text-6xl leading-tight"
-          >
-            Triple Threds
-          </span>
+// Any variables or data fetching happens here
+const pageTitle = "Triple Threds | Custom Embroidery";
+const services = [
+  "Private School Uniforms",
+  "Custom Golf Headcovers",
+  "Corporate Apparel",
+  "Sports Team Gear"
+];
+---
+
+<Layout title={pageTitle}>
+  <!-- Custom fonts for elegant typography -->
+  <style>
+    /* Import elegant script font for brand name */
+    @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+    /* Import clean sans-serif for supporting text */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+  </style>
+
+  <main>
+    <!-- Hero Section with Elegant Typography -->
+    <section class="bg-gray-50 py-16 px-4">
+      <div class="container mx-auto text-center max-w-5xl">
+        <div class="mb-10">
+          <!-- Decorative stitch element -->
+          <div class="flex justify-center mb-3">
+            <div class="w-24 h-1 border-t-2 border-b-2 border-rose-300 border-dotted"></div>
+          </div>
           
-          <span 
-            style={{
-              letterSpacing: "0.25em",
-              fontFamily: "'Montserrat', sans-serif"
-            }}
-            className="uppercase text-gray-600 font-light text-lg mt-2 block"
-          >
-            CUSTOM EMBROIDERY
-          </span>
-        </h1>
-        
-        {/* Decorative stitch element */}
-        <div className="flex justify-center mt-3 mb-6">
-          <div className="w-32 h-1 border-t-2 border-b-2 border-rose-300 border-dotted"></div>
+          <!-- Company name with fancy typography -->
+          <h1 class="mb-3 text-center">
+            <span 
+              style="font-family: 'Pinyon Script', cursive; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);"
+              class="block text-rose-800 text-6xl leading-tight"
+            >
+              Triple Threds
+            </span>
+            
+            <span 
+              style="letter-spacing: 0.25em; font-family: 'Montserrat', sans-serif;"
+              class="uppercase text-gray-600 font-light text-lg mt-2 block"
+            >
+              CUSTOM EMBROIDERY
+            </span>
+          </h1>
+          
+          <!-- Decorative stitch element -->
+          <div class="flex justify-center mt-3 mb-6">
+            <div class="w-32 h-1 border-t-2 border-b-2 border-rose-300 border-dotted"></div>
+          </div>
         </div>
         
-        <div className="flex gap-4 mt-6">
-          <button className="px-6 py-2 bg-rose-700 text-white font-medium rounded-lg shadow-sm">
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="/contact" class="px-6 py-2 bg-rose-700 text-white font-medium rounded-lg shadow-sm">
             Request a Quote
-          </button>
-          <button className="px-6 py-2 border-2 border-rose-700 text-rose-700 font-medium rounded-lg">
+          </a>
+          <a href="/portfolio" class="px-6 py-2 border-2 border-rose-700 text-rose-700 font-medium rounded-lg">
             View Our Work
-          </button>
+          </a>
         </div>
       </div>
-      
-      <div className="mt-8 text-center text-sm text-gray-500">
-        <p>This preview uses Pinyon Script and Montserrat fonts with rose/burgundy color accents</p>
-        <p className="mt-2">The design includes decorative stitch elements and elegant typography inspired by high-end embroidery businesses</p>
-      </div>
-    </div>
-  );
-};
-
-export default ElegantLogoPreview;
+    </section>
     
     <!-- Services Preview -->
     <section class="py-12">
@@ -74,162 +81,172 @@ export default ElegantLogoPreview;
         </a>
       </div>
     </section>
-  </main>
-</Layout>
-  
-    <!-- Private School Uniforms -->
-    <div class="mb-12">
-        <h3 class="text-2xl font-bold mb-4 text-blue-600">Private School Uniforms</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <p class="mb-4">We specialize in providing high-quality embroidered uniforms for private schools. Our comprehensive uniform program includes:</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span>School logos on polos, oxfords, and blazers</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span>Monogramming options for student names</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span>Consistent quality across all uniform pieces</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span>Bulk ordering system for school administration</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span>Parent-friendly ordering portal</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h4 class="font-bold text-lg mb-3">Schools We Serve</h4>
-                <p class="mb-3">We proudly provide uniform services to private schools throughout Oklahoma. Our dedicated school program offers:</p>
-                <ul class="space-y-1">
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>Dedicated account representative</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>Seasonal ordering schedules</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>Customized online ordering system</span>
-                    </li>
-                </ul>
-                <div class="mt-4">
-                    <a href="/school-uniforms" class="text-blue-600 font-medium hover:underline">Learn more about our school uniform program →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Golf Products -->
-    <div class="mb-12">
-        <h3 class="text-2xl font-bold mb-4 text-blue-600">Custom Golf Products</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <p class="mb-4">Our premium custom golf products are perfect for golf clubs, tournaments, and individual golfers looking for personalized gear:</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span><strong>Custom Headcovers</strong> - Personalized leather and synthetic headcovers for drivers, fairway woods, hybrids, and putters</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span><strong>Golf Towels</strong> - Custom embroidered towels with club logos or personal monograms</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span><strong>Team Apparel</strong> - Coordinated polos, pullovers, and hats for golf teams and events</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-bold mr-2">✓</span>
-                        <span><strong>Tournament Packages</strong> - Bulk orders for corporate events and charity tournaments</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h4 class="font-bold text-lg mb-3">Custom Headcover Spotlight</h4>
-                <p class="mb-3">Our premium headcovers feature:</p>
-                <ul class="space-y-1">
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>High-quality materials that protect clubs</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>Precise embroidery of logos and designs</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>Custom color matching to team or personal preferences</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">•</span>
-                        <span>Options for individual or set designs</span>
-                    </li>
-                </ul>
-                <div class="mt-4">
-                    <a href="/golf-products" class="text-blue-600 font-medium hover:underline">Explore our golf product collection →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Additional Services -->
-    <div>
-        <h3 class="text-2xl font-bold mb-4 text-blue-600">Additional Embroidery Services</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-5 rounded-lg shadow-sm">
-                <h4 class="font-bold text-lg mb-2">Corporate Apparel</h4>
-                <p>Professional embroidered polos, button-ups, and outerwear for your business with precise logo reproduction.</p>
-            </div>
-            <div class="bg-white p-5 rounded-lg shadow-sm">
-                <h4 class="font-bold text-lg mb-2">Sports Teams</h4>
-                <p>Custom jerseys, warm-ups, and bags for local sports teams with names, numbers, and team logos.</p>
-            </div>
-            <div class="bg-white p-5 rounded-lg shadow-sm">
-                <h4 class="font-bold text-lg mb-2">Personalized Gifts</h4>
-                <p>Monogrammed items for special occasions including birthdays, weddings, baby showers, and graduations.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Call to Action within Services -->
-    <div class="text-center mt-10">
-        <a href="/contact" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-            Request a Custom Quote
-        </a>
-    </div>
-</section>
 
-    <!-- Gallery Section -->
-    <section class="gallery py-20 text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10 text-blue-900">Our Work</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <img src="/sample-embroidery1.jpg" alt="Embroidery Example 1" class="rounded-lg shadow-md" />
-                <img src="/sample-embroidery2.jpg" alt="Embroidery Example 2" class="rounded-lg shadow-md" />
-                <img src="/sample-embroidery3.jpg" alt="Embroidery Example 3" class="rounded-lg shadow-md" />
+    <!-- Private School Uniforms -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Specialized Embroidery Services</h2>
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">Private School Uniforms</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <p class="mb-4">We specialize in providing high-quality embroidered uniforms for private schools. Our comprehensive uniform program includes:</p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span>School logos on polos, oxfords, and blazers</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span>Monogramming options for student names</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span>Consistent quality across all uniform pieces</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span>Bulk ordering system for school administration</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span>Parent-friendly ordering portal</span>
+                </li>
+              </ul>
             </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="font-bold text-lg mb-3">Schools We Serve</h4>
+              <p class="mb-3">We proudly provide uniform services to private schools throughout Oklahoma. Our dedicated school program offers:</p>
+              <ul class="space-y-1">
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>Dedicated account representative</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>Seasonal ordering schedules</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>Customized online ordering system</span>
+                </li>
+              </ul>
+              <div class="mt-4">
+                <a href="/school-uniforms" class="text-blue-600 font-medium hover:underline">Learn more about our school uniform program →</a>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        <!-- Golf Products -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">Custom Golf Products</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <p class="mb-4">Our premium custom golf products are perfect for golf clubs, tournaments, and individual golfers looking for personalized gear:</p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span><strong>Custom Headcovers</strong> - Personalized leather and synthetic headcovers for drivers, fairway woods, hybrids, and putters</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span><strong>Golf Towels</strong> - Custom embroidered towels with club logos or personal monograms</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span><strong>Team Apparel</strong> - Coordinated polos, pullovers, and hats for golf teams and events</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2">✓</span>
+                  <span><strong>Tournament Packages</strong> - Bulk orders for corporate events and charity tournaments</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="font-bold text-lg mb-3">Custom Headcover Spotlight</h4>
+              <p class="mb-3">Our premium headcovers feature:</p>
+              <ul class="space-y-1">
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>High-quality materials that protect clubs</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>Precise embroidery of logos and designs</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>Custom color matching to team or personal preferences</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  <span>Options for individual or set designs</span>
+                </li>
+              </ul>
+              <div class="mt-4">
+                <a href="/golf-products" class="text-blue-600 font-medium hover:underline">Explore our golf product collection →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Additional Services -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">Additional Embroidery Services</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-5 rounded-lg shadow-sm">
+              <h4 class="font-bold text-lg mb-2">Corporate Apparel</h4>
+              <p>Professional embroidered polos, button-ups, and outerwear for your business with precise logo reproduction.</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-sm">
+              <h4 class="font-bold text-lg mb-2">Sports Teams</h4>
+              <p>Custom jerseys, warm-ups, and bags for local sports teams with names, numbers, and team logos.</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-sm">
+              <h4 class="font-bold text-lg mb-2">Personalized Gifts</h4>
+              <p>Monogrammed items for special occasions including birthdays, weddings, baby showers, and graduations.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Call to Action within Services -->
+        <div class="text-center mt-10">
+          <a href="/contact" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+            Request a Custom Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section (placeholder) -->
+    <section class="py-20 text-center">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10 text-blue-900">Our Work</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Replace these with actual image paths when available -->
+          <div class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center">
+            <p class="text-gray-600">Embroidery Sample 1</p>
+          </div>
+          <div class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center">
+            <p class="text-gray-600">Embroidery Sample 2</p>
+          </div>
+          <div class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center">
+            <p class="text-gray-600">Embroidery Sample 3</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact py-20 bg-blue-900 text-white text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
-            <p class="text-lg">Have a project in mind? Let’s bring your ideas to life.</p>
-            <a href="mailto:info@triplethreadsok.com" class="mt-4 inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200"
-                >Email Us</a
-            >
-        </div>
+    <section id="contact" class="py-20 bg-blue-900 text-white text-center">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
+        <p class="text-lg">Have a project in mind? Let's bring your ideas to life.</p>
+        <a href="mailto:info@triplethredsok.com" class="mt-4 inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200">
+          Email Us
+        </a>
+      </div>
     </section>
+  </main>
 </Layout>
