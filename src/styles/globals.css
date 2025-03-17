@@ -1,50 +1,214 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
-@layer base {
-    h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
-    }
-
-    h2 {
-        @apply text-2xl font-bold sm:text-3xl;
-    }
-
-    a {
-        @apply underline transition hover:opacity-80;
-    }
-
-    pre {
-        @apply p-6 overflow-x-auto rounded-lg;
-    }
-
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-[#1f1f1f] text-[#F67280];
-        font-size: 0.9em;
-    }
+/* Global variables */
+:root {
+  --pine: rgb(75, 116, 108);
+  --aegean: rgb(70, 90, 114);
+  --rusty-coral: rgb(206, 134, 120);
+  --sea-mist: rgb(192, 202, 203);
+  --pale-taupe: rgb(238, 234, 228);
 }
 
-@layer components {
-    .markdown > h1,
-    .markdown > h2 {
-        @apply mt-12 mb-6;
-    }
+/* Base styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--pale-taupe);
+  color: var(--aegean);
+}
 
-    .markdown > p,
-    .markdown > pre {
-        @apply my-6;
-    }
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--aegean);
+}
 
-    .markdown > :first-child {
-        @apply mt-0;
-    }
+.script-font {
+  font-family: 'Pinyon Script', cursive;
+}
 
-    .markdown > :last-child {
-        @apply mb-0;
-    }
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
 
-    .btn:disabled {
-        @apply text-neutral-400 bg-neutral-700;
-    }
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Colors */
+.pine-bg {
+  background-color: var(--pine);
+}
+
+.aegean-bg {
+  background-color: var(--aegean);
+}
+
+.rusty-coral-bg {
+  background-color: var(--rusty-coral);
+}
+
+.sea-mist-bg {
+  background-color: var(--sea-mist);
+}
+
+.pale-taupe-bg {
+  background-color: var(--pale-taupe);
+}
+
+.pine-text {
+  color: var(--pine);
+}
+
+.aegean-text {
+  color: var(--aegean);
+}
+
+.rusty-coral-text {
+  color: var(--rusty-coral);
+}
+
+.sea-mist-text {
+  color: var(--sea-mist);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--rusty-coral);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: rgb(186, 114, 100);
+}
+
+.btn-secondary {
+  border: 2px solid var(--rusty-coral);
+  color: var(--rusty-coral);
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(206, 134, 120, 0.1);
+}
+
+.btn-tertiary {
+  background-color: var(--pine);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.btn-tertiary:hover {
+  background-color: rgb(60, 95, 88);
+}
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.page-section {
+  padding: 4rem 0;
+}
+
+.page-header {
+  padding: 3rem 0;
+  background-color: var(--aegean);
+  color: white;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Cards */
+.service-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--sea-mist);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Hover transitions */
+.hover-lift {
+  transition: transform 0.3s;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Utility classes */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .subsection-title {
+    font-size: 1.25rem;
+  }
 }
