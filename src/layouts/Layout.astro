@@ -1,8 +1,7 @@
 ---
-// Import global styles
+// If global.css is still causing issues, we'll use a different approach with inline styles
 // import '../styles/global.css';
 
-// Props for the layout
 export interface Props {
   title: string;
 }
@@ -17,6 +16,523 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    
+    <!-- Import fonts directly -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Inline styles as a fallback solution until we can get the external CSS working -->
+    <style>
+      /* Global variables */
+      :root {
+        --pine: rgb(75, 116, 108);
+        --aegean: rgb(70, 90, 114);
+        --rusty-coral: rgb(206, 134, 120);
+        --sea-mist: rgb(192, 202, 203);
+        --pale-taupe: rgb(238, 234, 228);
+      }
+
+      /* Base styles */
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--pale-taupe);
+        color: var(--aegean);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        color: var(--aegean);
+        line-height: 1.2;
+      }
+
+      .script-font {
+        font-family: 'Pinyon Script', cursive;
+        font-weight: normal;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .subsection-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Colors */
+      .pine-bg {
+        background-color: var(--pine);
+      }
+
+      .aegean-bg {
+        background-color: var(--aegean);
+      }
+
+      .rusty-coral-bg {
+        background-color: var(--rusty-coral);
+      }
+
+      .sea-mist-bg {
+        background-color: var(--sea-mist);
+      }
+
+      .pale-taupe-bg {
+        background-color: var(--pale-taupe);
+      }
+
+      .pine-text {
+        color: var(--pine);
+      }
+
+      .aegean-text {
+        color: var(--aegean);
+      }
+
+      .rusty-coral-text {
+        color: var(--rusty-coral);
+      }
+
+      .sea-mist-text {
+        color: var(--sea-mist);
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--rusty-coral);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: rgb(186, 114, 100);
+      }
+
+      .btn-secondary {
+        border: 2px solid var(--rusty-coral);
+        color: var(--rusty-coral);
+        padding: 10px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(206, 134, 120, 0.1);
+      }
+
+      /* Layout helpers */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Cards */
+      .service-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      /* Hover transitions */
+      .hover-lift {
+        transition: transform 0.3s;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Utility classes */
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .px-3 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .py-12 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .py-16 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .p-4 {
+        padding: 1rem;
+      }
+
+      .p-5 {
+        padding: 1.25rem;
+      }
+
+      .p-6 {
+        padding: 1.5rem;
+      }
+      
+      .p-8 {
+        padding: 2rem;
+      }
+
+      .mb-2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .mb-3 {
+        margin-bottom: 0.75rem;
+      }
+
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+
+      .mb-8 {
+        margin-bottom: 2rem;
+      }
+
+      .mb-10 {
+        margin-bottom: 2.5rem;
+      }
+
+      .mt-2 {
+        margin-top: 0.5rem;
+      }
+
+      .mt-3 {
+        margin-top: 0.75rem;
+      }
+
+      .mt-4 {
+        margin-top: 1rem;
+      }
+
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+
+      .mt-8 {
+        margin-top: 2rem;
+      }
+
+      .mt-10 {
+        margin-top: 2.5rem;
+      }
+
+      .h-10 {
+        height: 2.5rem;
+      }
+
+      .h-40 {
+        height: 10rem;
+      }
+
+      .w-10 {
+        width: 2.5rem;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .max-w-2xl {
+        max-width: 42rem;
+      }
+
+      .max-w-3xl {
+        max-width: 48rem;
+      }
+
+      .rounded {
+        border-radius: 0.25rem;
+      }
+
+      .rounded-l {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+      }
+
+      .rounded-r {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
+
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+
+      .shadow {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      }
+
+      .shadow-sm {
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .gap-2 {
+        gap: 0.5rem;
+      }
+
+      .gap-3 {
+        gap: 0.75rem;
+      }
+
+      .gap-4 {
+        gap: 1rem;
+      }
+
+      .gap-6 {
+        gap: 1.5rem;
+      }
+
+      .gap-8 {
+        gap: 2rem;
+      }
+
+      .gap-10 {
+        gap: 2.5rem;
+      }
+
+      .gap-x-6 {
+        column-gap: 1.5rem;
+      }
+
+      .gap-y-2 {
+        row-gap: 0.5rem;
+      }
+
+      .space-y-3 > * + * {
+        margin-top: 0.75rem;
+      }
+
+      .space-x-4 > * + * {
+        margin-left: 1rem;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+
+      .text-xs {
+        font-size: 0.75rem;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+      }
+
+      .text-lg {
+        font-size: 1.125rem;
+      }
+
+      .text-xl {
+        font-size: 1.25rem;
+      }
+
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+
+      .text-5xl {
+        font-size: 3rem;
+      }
+
+      .tracking-widest {
+        letter-spacing: 0.1em;
+      }
+
+      .transition-colors {
+        transition-property: color, background-color, border-color;
+        transition-duration: 0.15s;
+      }
+
+      .border {
+        border-width: 1px;
+        border-style: solid;
+      }
+
+      .border-t {
+        border-top-width: 1px;
+        border-top-style: solid;
+      }
+
+      .border-sea-mist {
+        border-color: var(--sea-mist);
+      }
+
+      .border-rusty-coral {
+        border-color: var(--rusty-coral);
+      }
+
+      .border-white {
+        border-color: white;
+      }
+
+      .border-opacity-20 {
+        border-opacity: 0.2;
+      }
+
+      .bg-opacity-20 {
+        background-opacity: 0.2;
+      }
+
+      .text-opacity-70 {
+        opacity: 0.7;
+      }
+
+      /* Responsive grid */
+      .grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      @media (min-width: 640px) {
+        .sm\:w-auto {
+          width: auto;
+        }
+        
+        .sm\:mt-0 {
+          margin-top: 0;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .md\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        
+        .md\:grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .lg\:grid-cols-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    </style>
   </head>
   <body>
     <slot />
