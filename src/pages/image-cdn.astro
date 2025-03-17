@@ -1,126 +1,164 @@
 ---
-import { Image } from 'astro:assets';
-import ContextAlert from '../components/ContextAlert.astro';
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
-import corgi from '../assets/corgi.jpg';
-import { getNetlifyContext } from '../utils';
-
-const sampleImage = '/images/corgi.jpg';
-
-const ctx = getNetlifyContext();
-const forceWebP = ctx === 'dev';
-const sampleImageSrcSet = [640, 1280, 2048]
-    .map((size) => {
-        return `/.netlify/images?url=${sampleImage}&w=${size}${forceWebP ? '&fm=webp' : ''} ${size}w`;
-    })
-    .join(', ');
-const sizes = '(max-width: 1024px) 100vw, 1024px';
-
-const astroImageSnippet = `
-## Using the built-in Astro &lt;Image /&gt; component
-
-Astro's \`Image\` component will automatically use Netlify Image CDN to serve optimized images.
-
-~~~jsx
----
 import { Image } from 'astro:assets';
-import corgi from '../assets/corgi.jpg';
+
+// You'll need to replace these with your actual embroidery images
+// For now I'm using placeholder references that won't break the build
+const placeholderImage = '/images/placeholder.jpg';
+
+// Sample embroidery projects - replace with your actual work
+const embroideryProjects = [
+    {
+        title: "Custom Corporate Polos",
+        description: "Professional embroidered polos with your company logo, perfect for creating a cohesive team look.",
+        imageUrl: placeholderImage,
+        category: "corporate"
+    },
+    {
+        title: "Team Sports Apparel",
+        description: "High-quality embroidered team names, numbers, and logos for sports uniforms and gear.",
+        imageUrl: placeholderImage,
+        category: "sports"
+    },
+    {
+        title: "Personalized Gifts",
+        description: "Custom monograms and designs for special occasions like birthdays, weddings, and graduations.",
+        imageUrl: placeholderImage,
+        category: "gifts"
+    },
+    {
+        title: "School Spirit Wear",
+        description: "Show your school pride with custom embroidered apparel featuring your school's mascot and colors.",
+        imageUrl: placeholderImage,
+        category: "school"
+    }
+];
+
+// Services offered
+const services = [
+    {
+        title: "Logo Digitization",
+        description: "We convert your logo or artwork into a digital embroidery file for perfect stitching.",
+        icon: "✓"
+    },
+    {
+        title: "Custom Design",
+        description: "Our design team can create custom embroidery designs based on your ideas and specifications.",
+        icon: "✓"
+    },
+    {
+        title: "Bulk Orders",
+        description: "Special pricing for bulk orders for teams, businesses, and events.",
+        icon: "✓"
+    },
+    {
+        title: "Quick Turnaround",
+        description: "Fast production times to meet your deadlines without compromising quality.",
+        icon: "✓"
+    }
+];
 ---
-// Later in your markup...
-<Image src={corgi} alt="Corgi" /* ... additional props */ />
-~~~
-`;
 
-const originalVsCdnSnippet = `
-## Original vs. optimized image: can you tell the difference?
-
-In the code below, a regular \`<img>\` tag is used in both cases for a framework-agnostic example. 
-Note that aside from Astro's \`Image\` or rolling your own \`<img>\` tags, you can also use the excellent [unpic-img](https://unpic.pics/) package.
-
-~~~jsx
-// <== On the left, the original image
-<img src="/images/corgi.jpg" alt="Corgi" />
-
-// ==> On the right, explicitly using Netlify Image CDN endpoint for a responsive image
-<img 
-  srcSet="${sampleImageSrcSet}"
-  sizes="${sizes}" 
-  alt="Corgi" 
-/>
-~~~
-`;
-
-const devModeWarning = `
-In local development, optimization is performed locally without automatic format
-detection, so format is set to WebP.
-`;
----
-
-<Layout title="Image CDN">
-    <div class="flex flex-col gap-12 sm:gap-16">
-        <section class="space-y-8">
-            <ContextAlert
-                addedChecksFunction={(ctx) => {
-                    return ctx === 'dev' ? devModeWarning : null;
-                }}
-            />
-            <h1>Image CDN</h1>
+<Layout title="Custom Embroidery Services | Triple Threds">
+    <div class="flex flex-col gap-12 sm:gap-16 max-w-6xl mx-auto">
+        <!-- Hero Section -->
+        <section class="text-center py-12">
+            <h1 class="text-4xl font-bold mb-6">Custom Embroidery Services</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8">
+                Professional embroidery for businesses, teams, schools, and personal projects. 
+                From logo shirts to custom gifts, we bring your designs to life with precision and quality.
+            </p>
+            <div class="flex justify-center">
+                <a href="/contact" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                    Get a Free Quote
+                </a>
+            </div>
         </section>
-        <section>
-            <Markdown content={astroImageSnippet} class="mb-8" />
-            <figure>
-                <Image src={corgi} alt="Corgi" class="border-2 border-white rounded-lg" />
-                <figcaption class="mt-2 text-sm italic">
-                    Credit: photo by <a href="https://unsplash.com/@alvannee">Alvan Nee</a> on
-                    <a href="https://unsplash.com/photos/long-coated-white-and-brown-dog-lvFlpqEvuRM"> Unsplash </a>
-                </figcaption>
-            </figure>
+
+        <!-- Embroidery Process Section -->
+        <section class="bg-gray-50 p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-8 text-center">Our Embroidery Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-lg mb-2">Consultation</h3>
+                    <p>Discuss your vision, requirements, and specifications for your project.</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-lg mb-2">Design</h3>
+                    <p>Our team digitizes your logo or creates a custom design for embroidery.</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-lg mb-2">Production</h3>
+                    <p>We stitch your design with precision on your chosen products.</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="font-bold text-lg mb-2">Delivery</h3>
+                    <p>Your completed items are carefully packaged and delivered on time.</p>
+                </div>
+            </div>
         </section>
+
+        <!-- Featured Projects -->
         <section>
-            <Markdown content={originalVsCdnSnippet} class="mb-8" />
-            <div class="diff aspect-[3/2] rounded-lg border-2 border-white">
-                <div class="diff-item-1">
-                    <div>
-                        <div class="relative">
-                            <span class="hidden absolute py-1.5 px-2.5 text-sm rounded-lg bg-neutral-900/70 top-2.5 right-2.5"></span>
-                            <img srcset={sampleImageSrcSet} alt="Corgi" />
+            <h2 class="text-3xl font-bold mb-8">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {embroideryProjects.map((project) => (
+                    <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img 
+                            src={project.imageUrl} 
+                            alt={project.title} 
+                            class="w-full h-64 object-cover"
+                        />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+                            <p class="text-gray-700">{project.description}</p>
                         </div>
                     </div>
-                </div>
-                <div class="diff-item-2">
-                    <div>
-                        <div class="relative">
-                            <span class="hidden absolute py-1.5 px-2.5 text-sm rounded-lg bg-neutral-900/70 top-2.5 left-2.5"></span>
-                            <img src={sampleImage} alt="Corgi" />
+                ))}
+            </div>
+            <div class="text-center mt-8">
+                <a href="/portfolio" class="inline-block px-6 py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                    View Full Portfolio
+                </a>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="bg-gray-50 p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {services.map((service) => (
+                    <div class="flex items-start p-4">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center text-blue-600 font-bold mr-4 flex-shrink-0">
+                            {service.icon}
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">{service.title}</h3>
+                            <p class="text-gray-700">{service.description}</p>
                         </div>
                     </div>
-                </div>
-                <div class="diff-resizer"></div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center py-12 bg-blue-600 text-white rounded-lg">
+            <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">
+                Contact us today to discuss your custom embroidery project and get a free quote.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="/contact" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-colors">
+                    Contact Us
+                </a>
+                <a href="/order" class="inline-block px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                    Order Now
+                </a>
             </div>
         </section>
     </div>
 </Layout>
-
-<script>
-    const images = document.querySelectorAll<HTMLImageElement>('.diff img');
-
-    images.forEach((image) => {
-        if (image.complete) {
-            showImageSize(image);
-        } else {
-            image.addEventListener('load', () => {
-                showImageSize(image);
-            });
-        }
-    });
-
-    function showImageSize(image: HTMLImageElement) {
-        const imageEntry = window?.performance?.getEntriesByName(image.currentSrc)?.[0] as PerformanceResourceTiming;
-        if (imageEntry && imageEntry.encodedBodySize) {
-            const imageOverlay = image.previousElementSibling;
-            imageOverlay.classList.remove('hidden');
-            imageOverlay.textContent = `Size: ${Math.ceil(imageEntry.encodedBodySize / 1024)}KB`;
-        }
-    }
-</script>
