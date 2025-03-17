@@ -1,19 +1,44 @@
----
-import Layout from '../layouts/Layout.astro';
----
+import React from 'react';
 
-<Layout>
-    <!-- Hero Section -->
-    <section class="hero bg-blue-900 text-white text-center py-20">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl font-bold mb-4">Triple Threads Custom Embroidery</h1>
-            <p class="text-lg">Precision. Style. Quality. Your Visions, Our Stitches.</p>
+const LogoPreview = () => {
+  return (
+    <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center justify-center">
+      <div className="text-center mb-8">
+        <h2 className="text-lg font-medium text-gray-500 mb-2">Logo Preview:</h2>
+        
+        <div className="p-6 border rounded-lg">
+          <h1 className="mb-1">
+            <span 
+              style={{
+                fontFamily: "'Tangerine', cursive",
+                fontSize: "5rem",
+                lineHeight: "1.1"
+              }}
+              className="block font-bold"
+            >
+              Triple Threds
+            </span>
+            <span 
+              style={{
+                letterSpacing: "0.1em"
+              }}
+              className="block text-xl font-medium text-gray-700"
+            >
+              CUSTOM EMBROIDERY
+            </span>
+          </h1>
         </div>
-    </section>
+      </div>
+      
+      <p className="text-gray-600 text-sm mt-4">
+        Note: This preview uses Tangerine as a web-safe alternative to Edwardian Script.
+        The actual font will be Edwardian Script when implemented on your website.
+      </p>
+    </div>
+  );
+};
 
-    <!-- Services Section - Updated -->
-<section class="bg-gray-50 p-8 rounded-lg">
-    <h2 class="text-3xl font-bold mb-8 text-center">Specialized Embroidery Services</h2>
+export default LogoPreview;
     
     <!-- Private School Uniforms -->
     <div class="mb-12">
