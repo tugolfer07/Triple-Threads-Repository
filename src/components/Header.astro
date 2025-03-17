@@ -1,1 +1,36 @@
+---
+// Define which page is active to highlight it in the nav
+const { activePage = 'home' } = Astro.props;
+---
 
+<header>
+  <div class="aegean-bg text-white py-2">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="/" class="script-font text-2xl">Triple Threads</a>
+      <div class="flex items-center gap-4">
+        <a href="/login" class="text-sm">Login</a>
+        <a href="/register" class="text-sm">Register</a>
+        <a href="/cart" class="relative w-6 h-6 bg-white rounded flex items-center justify-center">
+          <span class="text-gray-800 text-sm">🛒</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-white py-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <div class="flex gap-5">
+        <a href="/" class={`font-medium ${activePage === 'home' ? 'rusty-coral-text' : 'aegean-text'}`}>Home</a>
+        <a href="/services" class={`font-medium ${activePage === 'services' ? 'rusty-coral-text' : 'aegean-text'}`}>Services</a>
+        <a href="/portfolio" class={`font-medium ${activePage === 'portfolio' ? 'rusty-coral-text' : 'aegean-text'}`}>Portfolio</a>
+        <a href="/about" class={`font-medium ${activePage === 'about' ? 'rusty-coral-text' : 'aegean-text'}`}>About Us</a>
+        <a href="/contact" class={`font-medium ${activePage === 'contact' ? 'rusty-coral-text' : 'aegean-text'}`}>Contact</a>
+      </div>
+      
+      <form class="flex border border-gray-200 rounded overflow-hidden">
+        <input type="text" placeholder="Search..." class="px-4 py-2 border-none outline-none w-48">
+        <button type="submit" class="rusty-coral-bg text-white px-4 py-2">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
