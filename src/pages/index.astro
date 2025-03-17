@@ -1,206 +1,203 @@
-import React from 'react';
+---
+import Layout from '../layouts/Layout.astro';
 
-const TripleThredsHomepage = () => {
-  return (
-    <div className="website-preview" style={{ fontFamily: 'Montserrat, sans-serif', color: '#333', maxWidth: '100%', overflow: 'hidden' }}>
-      {/* Header */}
-      <header>
-        <div className="top-bar" style={{ backgroundColor: '#20232A', color: 'white', padding: '8px 0' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-            <a style={{ fontFamily: 'cursive', fontSize: '1.8rem', color: 'white', textDecoration: 'none' }}>Triple Threds</a>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-              <a style={{ color: 'white', textDecoration: 'none', fontSize: '0.9rem' }}>Login</a>
-              <a style={{ color: 'white', textDecoration: 'none', fontSize: '0.9rem' }}>Register</a>
-              <a style={{ position: 'relative', width: '24px', height: '24px', backgroundColor: '#fff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: '14px', color: '#333' }}>🛒</span>
-              </a>
-            </div>
-          </div>
+// Define your data variables here - no return statements
+const pageTitle = "Triple Threds | Custom Embroidery";
+const categories = [
+  {
+    title: "School Uniforms",
+    description: "Custom embroidery for private school uniforms",
+    image: "/images/placeholder-school.jpg" 
+  },
+  {
+    title: "Golf Products",
+    description: "Custom headcovers and golf accessories",
+    image: "/images/placeholder-golf.jpg"
+  },
+  {
+    title: "Corporate Apparel",
+    description: "Professional branded clothing for businesses",
+    image: "/images/placeholder-corporate.jpg"
+  },
+  {
+    title: "Personalized Gifts",
+    description: "Custom monogrammed items for special occasions",
+    image: "/images/placeholder-gifts.jpg"
+  }
+];
+
+// Add any other data you need
+---
+
+<Layout title={pageTitle}>
+  <!-- Custom fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+    
+    .script-font {
+      font-family: 'Pinyon Script', cursive;
+    }
+    .uppercase {
+      text-transform: uppercase;
+    }
+  </style>
+  
+  <!-- Header -->
+  <header>
+    <div class="top-bar bg-gray-900 text-white py-2">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <a href="/" class="script-font text-2xl">Triple Threds</a>
+        <div class="flex items-center gap-4">
+          <a href="/login" class="text-sm">Login</a>
+          <a href="/register" class="text-sm">Register</a>
+          <a href="/cart" class="relative w-6 h-6 bg-white rounded flex items-center justify-center">
+            <span class="text-gray-800 text-sm">🛒</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="main-menu bg-white py-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex gap-5">
+          <a href="/" class="text-gray-800 font-medium">Home</a>
+          <a href="/services" class="text-gray-800 font-medium">Services</a>
+          <a href="/portfolio" class="text-gray-800 font-medium">Portfolio</a>
+          <a href="/about" class="text-gray-800 font-medium">About Us</a>
+          <a href="/contact" class="text-gray-800 font-medium">Contact</a>
         </div>
         
-        <div className="main-menu" style={{ backgroundColor: 'white', padding: '15px 0', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-            <div style={{ display: 'flex', gap: '20px' }}>
-              <a style={{ color: '#333', textDecoration: 'none', fontWeight: 500 }}>Home</a>
-              <a style={{ color: '#333', textDecoration: 'none', fontWeight: 500 }}>Services</a>
-              <a style={{ color: '#333', textDecoration: 'none', fontWeight: 500 }}>Portfolio</a>
-              <a style={{ color: '#333', textDecoration: 'none', fontWeight: 500 }}>About Us</a>
-              <a style={{ color: '#333', textDecoration: 'none', fontWeight: 500 }}>Contact</a>
-            </div>
-            
-            <div style={{ display: 'flex' }}>
-              <form style={{ display: 'flex', border: '1px solid #EBEBEB', borderRadius: '4px', overflow: 'hidden' }}>
-                <div style={{ position: 'relative' }}>
-                  <input style={{ border: 'none', padding: '8px 15px', width: '200px', outline: 'none' }} placeholder="Search..." />
-                </div>
-                <button style={{ backgroundColor: '#8C3639', color: 'white', border: 'none', padding: '8px 15px', cursor: 'pointer' }}>Search</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </header>
-      
-      {/* Hero Section */}
-      <section className="hero" style={{ backgroundColor: '#f8f1f1', padding: '60px 0', textAlign: 'center' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-          <div>
-            <h1 style={{ marginBottom: '20px' }}>
-              <span style={{ display: 'block', fontFamily: 'cursive', fontSize: '4rem', color: '#8C3639', marginBottom: '5px', fontWeight: 'normal' }}>Triple Threds</span>
-              <span style={{ display: 'block', fontSize: '1.2rem', letterSpacing: '3px', color: '#4A5B6A', fontWeight: 400 }}>CUSTOM EMBROIDERY</span>
-            </h1>
-            <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 30px' }}>Professional embroidery for schools, businesses, and personalized projects</p>
-            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-              <a style={{ backgroundColor: '#8C3639', color: 'white', padding: '12px 24px', borderRadius: '4px', textDecoration: 'none', display: 'inline-block' }}>Get a Quote</a>
-              <a style={{ border: '2px solid #8C3639', color: '#8C3639', padding: '10px 24px', borderRadius: '4px', textDecoration: 'none', display: 'inline-block' }}>View Our Work</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Categories Section */}
-      <section className="categories" style={{ padding: '60px 0' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
-            {/* Category Card 1 */}
-            <a style={{ backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 3px 10px rgba(0,0,0,0.1)', textDecoration: 'none', color: '#333' }}>
-              <div style={{ height: '200px', backgroundColor: '#EBEBEB', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ backgroundColor: 'rgba(0,0,0,0.1)', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: '18px', color: '#666' }}>School Uniforms</span>
-                </div>
-              </div>
-              <h3 style={{ padding: '15px 20px 5px', margin: 0, color: '#8C3639' }}>School Uniforms</h3>
-              <p style={{ padding: '0 20px 20px', margin: 0, fontSize: '0.9rem' }}>Custom embroidery for private school uniforms</p>
-            </a>
-            
-            {/* Category Card 2 */}
-            <a style={{ backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 3px 10px rgba(0,0,0,0.1)', textDecoration: 'none', color: '#333' }}>
-              <div style={{ height: '200px', backgroundColor: '#EBEBEB', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ backgroundColor: 'rgba(0,0,0,0.1)', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: '18px', color: '#666' }}>Golf Products</span>
-                </div>
-              </div>
-              <h3 style={{ padding: '15px 20px 5px', margin: 0, color: '#8C3639' }}>Golf Products</h3>
-              <p style={{ padding: '0 20px 20px', margin: 0, fontSize: '0.9rem' }}>Custom headcovers and golf accessories</p>
-            </a>
-            
-            {/* Category Card 3 */}
-            <a style={{ backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 3px 10px rgba(0,0,0,0.1)', textDecoration: 'none', color: '#333' }}>
-              <div style={{ height: '200px', backgroundColor: '#EBEBEB', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ backgroundColor: 'rgba(0,0,0,0.1)', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: '18px', color: '#666' }}>Corporate Apparel</span>
-                </div>
-              </div>
-              <h3 style={{ padding: '15px 20px 5px', margin: 0, color: '#8C3639' }}>Corporate Apparel</h3>
-              <p style={{ padding: '0 20px 20px', margin: 0, fontSize: '0.9rem' }}>Professional branded clothing for businesses</p>
-            </a>
-            
-            {/* Category Card 4 */}
-            <a style={{ backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 3px 10px rgba(0,0,0,0.1)', textDecoration: 'none', color: '#333' }}>
-              <div style={{ height: '200px', backgroundColor: '#EBEBEB', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ backgroundColor: 'rgba(0,0,0,0.1)', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: '18px', color: '#666' }}>Personalized Gifts</span>
-                </div>
-              </div>
-              <h3 style={{ padding: '15px 20px 5px', margin: 0, color: '#8C3639' }}>Personalized Gifts</h3>
-              <p style={{ padding: '0 20px 20px', margin: 0, fontSize: '0.9rem' }}>Custom monogrammed items for special occasions</p>
-            </a>
-          </div>
-        </div>
-      </section>
-      
-      {/* Featured Projects Section */}
-      <section className="featured" style={{ padding: '60px 0', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '40px', color: '#4A5B6A' }}>Featured Projects</h2>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
-            {/* Featured items would go here - showing placeholders */}
-            {[1, 2, 3, 4, 5, 6].map(item => (
-              <div key={item} style={{ backgroundColor: '#f8f1f1', borderRadius: '8px', overflow: 'hidden', height: '220px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ color: '#999' }}>Project {item}</span>
-              </div>
-            ))}
-          </div>
-          
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <a style={{ border: '2px solid #8C3639', color: '#8C3639', padding: '10px 24px', borderRadius: '4px', textDecoration: 'none', display: 'inline-block' }}>View All Projects</a>
-          </div>
-        </div>
-      </section>
-      
-      {/* Testimonials Section */}
-      <section className="testimonials" style={{ padding: '60px 0', backgroundColor: '#f8f1f1' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '40px', color: '#4A5B6A' }}>What Our Clients Say</h2>
-          
-          <div style={{ backgroundColor: 'white', padding: '30px', borderRadius: '8px', boxShadow: '0 3px 10px rgba(0,0,0,0.1)', maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontSize: '1.1rem', fontStyle: 'italic', marginBottom: '20px' }}>
-              "Triple Threds transformed our team uniforms with incredible attention to detail. Their embroidery quality is outstanding and their customer service is even better!"
-            </p>
-            <p style={{ fontWeight: 'bold' }}>— Sarah Johnson, Oak Hill Academy</p>
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="cta" style={{ padding: '80px 0', backgroundColor: '#8C3639', color: 'white', textAlign: 'center' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-          <h2 style={{ marginBottom: '15px' }}>Ready to Start Your Custom Project?</h2>
-          <p style={{ marginBottom: '30px', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Contact us today for a free quote and consultation.
-          </p>
-          <a style={{ backgroundColor: 'white', color: '#8C3639', padding: '12px 24px', borderRadius: '4px', textDecoration: 'none', display: 'inline-block' }}>Get Started</a>
-        </div>
-      </section>
-      
-      {/* Footer */}
-      <footer style={{ backgroundColor: '#20232A', color: 'white', padding: '60px 0 30px' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 15px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px', marginBottom: '40px' }}>
-            <div>
-              <h4 style={{ marginBottom: '20px', color: '#C26E67' }}>Services</h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>School Uniforms</a></li>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>Golf Products</a></li>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>Corporate Apparel</a></li>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>Custom Designs</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 style={{ marginBottom: '20px', color: '#C26E67' }}>Customer Care</h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>About Us</a></li>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>Contact Us</a></li>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>FAQ</a></li>
-                <li style={{ marginBottom: '10px' }}><a style={{ color: 'white', textDecoration: 'none' }}>Policies</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 style={{ marginBottom: '20px', color: '#C26E67' }}>Connect With Us</h4>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
-                <a style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}>f</a>
-                <a style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}>in</a>
-                <a style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}>p</a>
-              </div>
-              <div>
-                <h5 style={{ marginBottom: '15px' }}>Join our newsletter</h5>
-                <form style={{ display: 'flex' }}>
-                  <input style={{ flexGrow: 1, padding: '10px', border: 'none', borderRadius: '4px 0 0 4px' }} placeholder="Your email" />
-                  <button style={{ backgroundColor: '#8C3639', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '0 4px 4px 0', cursor: 'pointer' }}>Subscribe</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          
-          <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)' }}>
-            &copy; 2025 Triple Threds Embroidery. All rights reserved.
-          </div>
-        </div>
-      </footer>
+        <form class="flex border border-gray-200 rounded overflow-hidden">
+          <input type="text" placeholder="Search..." class="px-4 py-2 border-none outline-none w-48">
+          <button type="submit" class="bg-rose-800 text-white px-4 py-2">Search</button>
+        </form>
+      </div>
     </div>
-  );
-};
-
-export default TripleThredsHomepage;
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="bg-rose-50 py-16 text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="mb-5">
+        <span class="script-font text-6xl block text-rose-800 mb-1 font-normal">Triple Threds</span>
+        <span class="uppercase text-base tracking-widest text-gray-600 font-light">CUSTOM EMBROIDERY</span>
+      </h1>
+      <p class="text-xl max-w-2xl mx-auto mb-8">Professional embroidery for schools, businesses, and personalized projects</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="/contact" class="bg-rose-800 text-white px-6 py-3 rounded">Get a Quote</a>
+        <a href="/portfolio" class="border-2 border-rose-800 text-rose-800 px-6 py-3 rounded">View Our Work</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Categories Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {categories.map((category) => (
+          <a href={`/services/${category.title.toLowerCase().replace(/\s+/g, '-')}`} class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-48 bg-gray-200 flex items-center justify-center">
+              <span class="text-gray-600">{category.title}</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-rose-800 font-medium text-lg mb-1">{category.title}</h3>
+              <p class="text-gray-700 text-sm">{category.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Projects Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl text-center text-gray-700 mb-10">Featured Projects</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+        <!-- Project placeholders - replace with actual projects -->
+        {[1, 2, 3, 4, 5, 6].map((item) => (
+          <div class="bg-rose-50 rounded-lg h-56 flex items-center justify-center">
+            <span class="text-gray-500">Project {item}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/portfolio" class="border-2 border-rose-800 text-rose-800 px-6 py-3 rounded inline-block">View All Projects</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonial Section -->
+  <section class="py-16 bg-rose-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl text-center text-gray-700 mb-10">What Our Clients Say</h2>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto text-center">
+        <p class="text-lg italic mb-5">
+          "Triple Threds transformed our team uniforms with incredible attention to detail. Their embroidery quality is outstanding and their customer service is even better!"
+        </p>
+        <p class="font-bold">— Sarah Johnson, Oak Hill Academy</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-20 bg-rose-800 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl mb-4">Ready to Start Your Custom Project?</h2>
+      <p class="max-w-xl mx-auto mb-8">
+        Contact us today for a free quote and consultation.
+      </p>
+      <a href="/contact" class="bg-white text-rose-800 px-6 py-3 rounded inline-block font-medium">Get Started</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <h4 class="text-rose-300 font-medium mb-5">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="/services/school-uniforms" class="hover:text-rose-300">School Uniforms</a></li>
+            <li><a href="/services/golf-products" class="hover:text-rose-300">Golf Products</a></li>
+            <li><a href="/services/corporate-apparel" class="hover:text-rose-300">Corporate Apparel</a></li>
+            <li><a href="/services/custom-designs" class="hover:text-rose-300">Custom Designs</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-rose-300 font-medium mb-5">Customer Care</h4>
+          <ul class="space-y-3">
+            <li><a href="/about" class="hover:text-rose-300">About Us</a></li>
+            <li><a href="/contact" class="hover:text-rose-300">Contact Us</a></li>
+            <li><a href="/faq" class="hover:text-rose-300">FAQ</a></li>
+            <li><a href="/policies" class="hover:text-rose-300">Policies</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-rose-300 font-medium mb-5">Connect With Us</h4>
+          <div class="flex gap-4 mb-5">
+            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-rose-800">f</a>
+            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-rose-800">in</a>
+            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-rose-800">p</a>
+          </div>
+          
+          <h5 class="font-medium mb-3">Join our newsletter</h5>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l w-full">
+            <button type="submit" class="bg-rose-800 text-white px-4 py-2 rounded-r">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="text-center pt-6 border-t border-gray-800 text-gray-400 text-sm">
+        &copy; 2025 Triple Threds Embroidery. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</Layout>
