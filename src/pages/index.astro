@@ -1,5 +1,5 @@
 ---
-// The simplest possible index page
+// Triple Threads Embroidery - Home Page
 ---
 
 <!DOCTYPE html>
@@ -63,6 +63,18 @@
       align-items: center;
     }
     
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo-img {
+      height: 40px;
+      width: auto;
+      border-radius: 4px;
+    }
+    
     .logo {
       font-family: 'Pinyon Script', cursive;
       font-size: 28px;
@@ -76,22 +88,29 @@
     
     .nav-links a {
       color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: #CE8678; /* Rusty Coral */
     }
     
     /* Hero */
     .hero {
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      background-color: #EEEAE4; /* Pale Taupe */
     }
     
     .hero h1 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     
     .hero .title {
       font-family: 'Pinyon Script', cursive;
       color: #CE8678; /* Rusty Coral */
-      font-size: 48px;
+      font-size: 52px;
       font-weight: normal;
       line-height: 1.2;
     }
@@ -102,6 +121,7 @@
       letter-spacing: 2px;
       color: #465A72; /* Aegean */
       margin-bottom: 20px;
+      font-weight: 500;
     }
     
     .hero p {
@@ -109,6 +129,7 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      font-size: 17px;
     }
     
     /* Buttons */
@@ -129,6 +150,7 @@
     .btn-primary:hover {
       background-color: #b97267;
       color: white;
+      transform: translateY(-2px);
     }
     
     .btn-secondary {
@@ -138,53 +160,33 @@
     
     .btn-secondary:hover {
       background-color: rgba(206, 134, 120, 0.1);
+      transform: translateY(-2px);
     }
     
-    /* Services */
-    .services {
-      padding: 40px 0;
+    /* Custom Creations */
+    .custom-creations {
+      padding: 60px 0;
       background-color: white;
     }
     
     .section-title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #465A72; /* Aegean */
-      font-size: 32px;
+      font-size: 36px;
+      font-weight: 600;
     }
     
-    .service-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      list-style: none;
-    }
-    
-    @media (min-width: 768px) {
-      .service-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    .service-item {
-      border: 1px solid #C0CACB; /* Sea Mist */
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    .service-item h3 {
-      background-color: #465A72; /* Aegean */
-      color: white;
-      padding: 15px;
+    .section-subtitle {
       text-align: center;
-    }
-    
-    .service-item p {
-      padding: 15px;
+      margin-bottom: 40px;
       color: #4B746C; /* Pine */
+      font-size: 18px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    /* Service Card Styles */
     .service-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -236,12 +238,14 @@
       padding: 15px 15px 5px;
       color: #465A72; /* Aegean */
       font-size: 20px;
+      font-weight: 600;
     }
 
     .service-card p {
       padding: 0 15px 15px;
       color: #4B746C; /* Pine */
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     .service-link {
@@ -278,40 +282,45 @@
     .testimonial {
       background-color: #4B746C; /* Pine */
       color: white;
-      padding: 40px 0;
+      padding: 60px 0;
       text-align: center;
     }
     
     .testimonial-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 30px;
+      padding: 40px;
       border-radius: 8px;
       background-color: white;
       color: #465A72; /* Aegean */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
     .testimonial-text {
       font-style: italic;
       margin-bottom: 20px;
       font-size: 18px;
+      line-height: 1.7;
     }
     
     .testimonial-author {
       color: #CE8678; /* Rusty Coral */
       font-weight: 500;
+      font-size: 16px;
     }
     
     /* Call to Action */
     .cta {
       background-color: #CE8678; /* Rusty Coral */
       color: white;
-      padding: 40px 0;
+      padding: 60px 0;
       text-align: center;
     }
     
     .cta h2 {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: 600;
     }
     
     .cta p {
@@ -319,13 +328,15 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      font-size: 17px;
+      line-height: 1.7;
     }
     
     /* Footer */
     footer {
       background-color: #465A72; /* Aegean */
       color: white;
-      padding: 30px 0;
+      padding: 50px 0 30px;
     }
     
     .footer-content {
@@ -342,8 +353,9 @@
     
     .footer-section h3 {
       color: #CE8678; /* Rusty Coral */
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       font-size: 18px;
+      font-weight: 600;
     }
     
     .footer-section ul {
@@ -351,11 +363,12 @@
     }
     
     .footer-section li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     
     .footer-section a {
       color: white;
+      transition: color 0.3s ease;
     }
     
     .footer-section a:hover {
@@ -364,7 +377,7 @@
     
     .copyright {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       font-size: 14px;
@@ -373,8 +386,8 @@
     /* Social Icons */
     .social-icons {
       display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
+      gap: 12px;
+      margin-bottom: 20px;
     }
     
     .social-icon {
@@ -385,32 +398,11 @@
       height: 36px;
       border-radius: 50%;
       background-color: rgba(255, 255, 255, 0.1);
+      transition: background-color 0.3s ease;
     }
     
     .social-icon:hover {
       background-color: #CE8678; /* Rusty Coral */
-    }
-    
-    /* Subscribe Form */
-    .subscribe-form {
-      display: flex;
-      margin-top: 15px;
-    }
-    
-    .subscribe-input {
-      flex-grow: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-    }
-    
-    .subscribe-button {
-      background-color: #CE8678; /* Rusty Coral */
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -420,7 +412,10 @@
   <header>
     <div class="container">
       <div class="header-content">
-        <a href="/" class="logo">Triple Threads</a>
+        <a href="/" class="logo-container">
+          <img src="/images/logo.jpg" alt="Triple Threads Logo" class="logo-img">
+          <span class="logo">Triple Threads</span>
+        </a>
         <div class="nav-links">
           <a href="/client-portal">Client Portal</a>
           <a href="#contact">Contact</a>
@@ -439,15 +434,16 @@
       <p>Professional embroidery for schools, businesses, and personalized projects</p>
       <div>
         <a href="#contact" class="btn btn-primary">Get a Quote</a>
-        <a href="#services" class="btn btn-secondary">View Services</a>
+        <a href="#custom-creations" class="btn btn-secondary">View Our Work</a>
       </div>
     </div>
   </section>
   
-  <!-- Services Section -->
-  <section id="services" class="services">
+  <!-- Custom Creations Section -->
+  <section id="custom-creations" class="custom-creations">
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      <h2 class="section-title">Custom Creations</h2>
+      <p class="section-subtitle">Explore our embroidery services tailored to your specific needs</p>
       <div class="service-grid">
         <div class="service-card">
           <div class="service-image">
@@ -513,12 +509,12 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Services</h3>
+          <h3>Custom Creations</h3>
           <ul>
-            <li><a href="#services">School Uniforms</a></li>
-            <li><a href="#services">Golf Products</a></li>
-            <li><a href="#services">Corporate Apparel</a></li>
-            <li><a href="#services">Personalized Gifts</a></li>
+            <li><a href="#custom-creations">School Uniforms</a></li>
+            <li><a href="#custom-creations">Golf Products</a></li>
+            <li><a href="#custom-creations">Corporate Apparel</a></li>
+            <li><a href="#custom-creations">Personalized Gifts</a></li>
           </ul>
         </div>
         
