@@ -184,6 +184,96 @@
       color: #4B746C; /* Pine */
     }
     
+    /* Service Card Styles */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 576px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .service-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .service-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.05);
+    }
+
+    .service-card h3 {
+      padding: 15px 15px 5px;
+      color: #465A72; /* Aegean */
+      font-size: 20px;
+    }
+
+    .service-card p {
+      padding: 0 15px 15px;
+      color: #4B746C; /* Pine */
+      font-size: 14px;
+    }
+
+    .service-link {
+      display: inline-block;
+      margin: 0 15px 15px;
+      color: #CE8678; /* Rusty Coral */
+      font-weight: 500;
+      position: relative;
+    }
+
+    .service-link:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #CE8678; /* Rusty Coral */
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    .service-link:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    .service-link:hover {
+      color: #CE8678; /* Rusty Coral */
+    }
+    
     /* Testimonial */
     .testimonial {
       background-color: #4B746C; /* Pine */
@@ -358,24 +448,43 @@
   <section id="services" class="services">
     <div class="container">
       <h2 class="section-title">Our Services</h2>
-      <ul class="service-list">
-        <li class="service-item">
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/uniform-placeholder.jpg" alt="School Uniforms Embroidery">
+          </div>
           <h3>School Uniforms</h3>
-          <p>Custom embroidery for private school uniforms</p>
-        </li>
-        <li class="service-item">
+          <p>Custom embroidery for private school uniforms, including crests, names, and logos.</p>
+          <a href="#contact" class="service-link">Request a Quote</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/golf-placeholder.jpg" alt="Golf Apparel Embroidery">
+          </div>
           <h3>Golf Products</h3>
-          <p>Custom headcovers and golf accessories</p>
-        </li>
-        <li class="service-item">
+          <p>Professional embroidery for golf clubs, tournaments, headcovers, and accessories.</p>
+          <a href="#contact" class="service-link">Request a Quote</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/corporate-placeholder.jpg" alt="Corporate Wear Embroidery">
+          </div>
           <h3>Corporate Apparel</h3>
-          <p>Professional branded clothing for businesses</p>
-        </li>
-        <li class="service-item">
+          <p>Brand your business apparel with custom logos and designs for a professional look.</p>
+          <a href="#contact" class="service-link">Request a Quote</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/gift-placeholder.jpg" alt="Gift Items Embroidery">
+          </div>
           <h3>Personalized Gifts</h3>
-          <p>Custom monogrammed items for special occasions</p>
-        </li>
-      </ul>
+          <p>Custom monogrammed items for special occasions, holidays, and commemorative events.</p>
+          <a href="#contact" class="service-link">Request a Quote</a>
+        </div>
+      </div>
     </div>
   </section>
   
@@ -428,6 +537,8 @@
             <a href="#" class="social-icon">f</a>
             <a href="#" class="social-icon">in</a>
             <a href="#" class="social-icon">p</a>
+          </div>
+        </div>
       </div>
       
       <div class="copyright">
